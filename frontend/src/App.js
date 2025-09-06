@@ -1,0 +1,81 @@
+// import { Toaster } from "./components/ui/toaster";
+// import { Toaster as Sonner } from "./components/ui/sonner";
+// import { TooltipProvider } from "./components/ui/tooltip";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Index from "./pages/Index.js";
+// import NotFound from "./pages/NotFound.js";
+
+// const queryClient = new QueryClient();
+
+// const App = () => (
+//   <QueryClientProvider client={queryClient}>
+//     <TooltipProvider>
+//       <Toaster />
+//       <Sonner />
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path="/" element={<Index />} />
+//           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+//           <Route path="*" element={<NotFound />} />
+//         </Routes>
+//       </BrowserRouter>
+//     </TooltipProvider>
+//   </QueryClientProvider>
+// );
+
+// export default App;
+import React, { useState } from "react";
+import { Toaster } from "./components/ui/toaster";
+import { Toaster as Sonner } from "./components/ui/sonner";
+import { TooltipProvider } from "./components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navigation from "./components/Navigation";
+import Index from "./pages/Index.js";
+import NotFound from "./pages/NotFound.js";
+
+const queryClient = new QueryClient();
+
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+  };
+
+  const handleLoginSuccess = (token) => {
+    localStorage.setItem("token", token);
+    setIsAuthenticated(true);
+  };
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          {/* <Navigation
+            activeTab="performance"
+            onTabChange={() => {}}
+            isAuthenticated={isAuthenticated}
+            onLogout={handleLogout}
+          /> */}
+          <Routes>
+            <Route
+              path="/"
+              element={<Index onLoginSuccess={handleLoginSuccess} />}
+            />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
+
+export default App;
+
