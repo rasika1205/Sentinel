@@ -215,3 +215,7 @@ This project is built collaboratively for OpenAI Hackathon:
 - Soham Mawai
 
 ---
+
+📜 License
+
+This project is licensed under the MIT License.
