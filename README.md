@@ -208,7 +208,7 @@ Both **frontend** and **backend** have separate `.env` files:
 
 ## 🤝 Team
 
-This project is built collaboratively for OpenAI Hackathon:
+This project is built collaboratively for Hackathon:
 
 - Rasika Gautam
 - Pulkit Gupta
@@ -216,6 +216,6 @@ This project is built collaboratively for OpenAI Hackathon:
 
 ---
 
-📜 License
+## 📜 License
 
 This project is licensed under the MIT License.
