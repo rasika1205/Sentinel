@@ -206,16 +206,18 @@ Both **frontend** and **backend** have separate `.env` files:
 
 ---
 
-## 🤝 Team
+## License
 
-This project is built collaboratively for Hackathon:
+This project is **proprietary** and protected by copyright © 2025 Rasika Gautam.
 
-- Rasika Gautam
-- Pulkit Gupta
-- Soham Mawai
+You are welcome to view the code for educational or evaluation purposes (e.g., portfolio review by recruiters).  
+However, you may **not copy, modify, redistribute, or claim this project as your own** under any circumstances — including in interviews or job applications — without written permission.
 
 ---
 
-## 📜 License
+## 🧑‍💻 Author
 
-This project is licensed under the MIT License.
+**Rasika Gautam**
+*Data Science & AI Enthusiast* | B.Tech MAC, NSUT
+[GitHub](https://github.com/rasika1205)
+
